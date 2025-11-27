@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main() {
+    
+    FILE *fptr;
+    fptr = fopen("student_records.txt", "a");
+    int studentNo;
+    char name[80];
+    char section[80];
+    
+    while (1) {
+        
+        printf("Enter Student Number: ");
+        scanf("%d", &studentNo);
+        getchar();
+        
+        printf("Enter Complete Name: ");
+        fgets(name, sizeof(name), stdin);
+        
+        printf("Enter Section: ");
+        fgets(section, sizeof(section), stdin);
+        
+        fprintf(fptr, "ID Number: %d\n", studentNo);
+        fprintf(fptr, "Full Name: %s", name);
+        fprintf(fptr, "Section: %s\n", section);
+        
+        printf("\n|!| Record added and saved successfully.\n");
+        
+        int input;
+        printf("|?| Add another student? [Enter 1 if yes, 0 if No]\n");
+        
+        printf("Type response here: ");
+        scanf("%d", &input);
+        getchar();
+        if(input == 0) {
+            printf("\n|!| All student records have been saved!");
+            break;
+        }
+        
+    }
+    
+    return 0;
+}
