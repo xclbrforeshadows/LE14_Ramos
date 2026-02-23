@@ -27,7 +27,7 @@ int main() {
         printf("\n|!| Record added and saved successfully.\n");
         
         int input;
-        printf("|?| Add another student? [Enter 1 if yes, 0 if No]\n");
+        printf("|?| Add another student? [Enter 1 if yes, 0 if No]\n\n");
         
         printf("Type response here: ");
         scanf("%d", &input);
